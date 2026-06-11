@@ -1,11 +1,11 @@
-# 🏢 Berlimdo Enterprise Ecosystem - Knowledge Base
+# Berlimdo Enterprise Ecosystem - Knowledge Base
 
 Selamat datang di pusat dokumentasi teknis sistem manajemen stok PT Berlimdo Jaya Makmur (BJM). Dokumen ini dirancang sebagai panduan otoritatif bagi pengembang, arsitek sistem, dan kecerdasan buatan (AI) untuk memahami, memelihara, dan mengembangkan ekosistem Berlimdo.
 
-## 🌟 Visi Sistem
+## Visi Sistem
 Sistem Berlimdo bukan sekadar aplikasi pencatatan stok, melainkan platform **Integritas Distribusi** yang mengintegrasikan validasi lokasi tingkat tinggi, manajemen inventaris real-time, dan sistem motivasi tenaga kerja (gamifikasi) untuk memastikan efisiensi operasional di ribuan titik distribusi.
 
-## 🗺️ Peta Dokumentasi
+## Peta Dokumentasi
 
 ### 1. [Arsitektur & Alur Data](architecture.md)
 *Deep dive* ke dalam topologi sistem, interaksi antar komponen (Backend, Web, Mobile), dan bagaimana data mengalir dari lapangan hingga ke laporan eksekutif.
@@ -39,7 +39,7 @@ Informasi mengenai pengolahan data awal wilayah, catatan revisi historis, dan sk
 
 ---
 
-## 🛠️ Tech Stack Overview
+## Tech Stack Overview
 
 | Komponen | Teknologi | Peran Utama |
 | :--- | :--- | :--- |

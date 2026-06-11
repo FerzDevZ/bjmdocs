@@ -1,17 +1,17 @@
-# 📱 Teknis Aplikasi Mobile (Flutter Architecture)
+# Teknis Aplikasi Mobile (Flutter Architecture)
 
-Aplikasi mobile Berlimdo adalah *heavy-duty field tool* yang dibangun dengan Flutter untuk menangani operasional intensif di lapangan.
+Aplikasi mobile Berlimdo adalah heavy-duty field tool yang dibangun dengan Flutter untuk menangani operasional intensif di lapangan.
 
-## 🧱 Arsitektur Kode (Clean Architecture Approach)
+## Arsitektur Kode (Clean Architecture Approach)
 
 Aplikasi dibagi menjadi lapisan yang jelas untuk memudahkan pemeliharaan:
 - **Core**: Berisi infrastruktur dasar (API Client, Database Helper, Theme).
 - **Data Layer**: Implementasi `Repository` dan `Datasource` untuk akses data remote (API) dan lokal (SQLite).
-- **State Management (Cubit)**: Menggunakan pola *state-driven UI* (`StockLoading`, `StockError`, `StockCheckInSuccess`) yang memastikan antarmuka pengguna selalu mencerminkan status proses asinkron.
+- **State Management (Cubit)**: Menggunakan pola state-driven UI (`StockLoading`, `StockError`, `StockCheckInSuccess`) yang memastikan antarmuka pengguna selalu mencerminkan status proses asinkron.
 
 ---
 
-## 💾 Strategi Offline-First & Sinkronisasi
+## Strategi Offline-First & Sinkronisasi
 Mengingat salesman sering bekerja di area dengan sinyal lemah:
 - **SQLite (sqflite)**: Digunakan untuk menyimpan cache data toko, produk, dan transaksi yang belum terkirim.
 - **Sync Logic (ID Mapping)**: Menggunakan pemetaan ID sementara (`OFFLINE-ID`) ke ID permanen dari server saat proses sinkronisasi untuk menjaga relasi antara Kunjungan dan Restock tetap utuh meskipun dibuat saat offline.
@@ -19,7 +19,7 @@ Mengingat salesman sering bekerja di area dengan sinyal lemah:
 
 ---
 
-## 🔌 Integrasi Hardware
+## Integrasi Hardware
 
 ### 1. Bluetooth Thermal Printer
 - **Library**: `blue_thermal_printer`.
@@ -37,7 +37,7 @@ Mengingat salesman sering bekerja di area dengan sinyal lemah:
 
 ---
 
-## 🛠️ State Management (BLoC/Cubit Example)
+## State Management (BLoC/Cubit Example)
 Aplikasi menggunakan pola **Event -> State**:
 - **Loading State**: Menampilkan shimmer effect atau loading spinner.
 - **Success State**: Menampilkan data yang berhasil diambil.
@@ -45,8 +45,8 @@ Aplikasi menggunakan pola **Event -> State**:
 
 ---
 
-## 🔄 Pembaruan Aplikasi (OTA Update)
+## Pembaruan Aplikasi (OTA Update)
 Aplikasi memiliki mekanisme pembaruan mandiri:
 1. Saat startup, aplikasi memanggil `GET /version.json`.
-2. Jika `buildNumber` di server > `buildNumber` lokal, muncul *update overlay*.
+2. Jika `buildNumber` di server > `buildNumber` lokal, muncul update overlay.
 3. Aplikasi mengunduh APK baru menggunakan `ota_update` dan mengarahkan pengguna ke proses instalasi.

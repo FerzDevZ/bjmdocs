@@ -1,8 +1,8 @@
-# 🗄️ Deep Dive Database (Prisma Schema Analysis)
+# Deep Dive Database (Prisma Schema Analysis)
 
 Database Berlimdo dirancang untuk menangani integritas data transaksional yang tinggi dengan relasi yang kompleks antara pengguna, lokasi geografis, dan pergerakan stok.
 
-## 📊 Model Relasi Utama
+## Model Relasi Utama
 
 ### 1. Entitas Pengguna (`User`)
 - **Peran (Role)**: `STAFF` (Salesman), `ADMIN`, `SUPER_ADMIN`.
@@ -38,7 +38,7 @@ Ini adalah jantung dari sistem penjualan:
 
 ---
 
-## 🛠️ Enums (Konstanta Database)
+## Enums (Konstanta Database)
 
 - **ShopType**: `RETAIL`, `GROSIR`, `SEMI_GROSIR`. Digunakan untuk membedakan struktur harga.
 - **PaymentType**: `CASH`, `CREDIT`.
@@ -46,6 +46,6 @@ Ini adalah jantung dari sistem penjualan:
 
 ---
 
-## 🚀 Optimasi Database
+## Optimasi Database
 - **Indexing**: Indeks diletakkan pada field yang sering dicari seperti `userId`, `shopId`, `date` pada `DailyRoute`, dan koordinat geografis.
 - **Cascading**: Penghapusan user akan menghapus `RefreshToken` secara otomatis (Cascade) tetapi tetap mempertahankan log transaksi untuk audit.

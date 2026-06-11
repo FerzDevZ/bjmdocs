@@ -1,8 +1,8 @@
-# 🛡️ DevOps, Security & Deployment (Operational Manual)
+# DevOps, Security & Deployment (Operational Manual)
 
 Ekosistem Berlimdo dikelola dengan strategi hibrida antara kontainerisasi (Docker) dan manajemen proses native (PM2) untuk memaksimalkan performa dan kemudahan pemeliharaan.
 
-## 🚀 Strategi Deployment
+## Strategi Deployment
 
 ### 1. Kontainerisasi (Docker)
 Digunakan terutama untuk Database dan environment isolasi.
@@ -13,19 +13,19 @@ Digunakan terutama untuk Database dan environment isolasi.
     - `web`: Next.js production build.
 
 ### 2. Process Management (PM2)
-Digunakan pada server produksi untuk aplikasi Node.js guna mendapatkan monitoring real-time dan fitur *auto-restart* yang lebih ringan.
+Digunakan pada server produksi untuk aplikasi Node.js guna mendapatkan monitoring real-time dan fitur auto-restart yang lebih ringan.
 - **Konfigurasi**: `ecosystem.config.js`.
 - **Perintah Utama**: `pm2 start ecosystem.config.js`.
 
 ### 3. Otomatisasi Skrip (Python & Bash)
 Berbagai skrip dikembangkan untuk mengotomatiskan tugas-tugas kritis:
 - `vps_direct_deploy.sh`: Sinkronisasi kode menggunakan `rsync` dan build otomatis di server.
-- `master_seed_deploy.py`: Melakukan *force reset* skema database dan injeksi data master wilayah secara otomatis.
-- `robust_deploy.py`: Skrip deployment dengan sistem *heartbeat* untuk memantau build yang lama (Next.js build).
+- `master_seed_deploy.py`: Melakukan force reset skema database dan injeksi data master wilayah secara otomatis.
+- `robust_deploy.py`: Skrip deployment dengan sistem heartbeat untuk memantau build yang lama (Next.js build).
 
 ---
 
-## 🔒 Protokol Keamanan
+## Protokol Keamanan
 
 ### 1. Network Security
 - **SSL/TLS**: Semua komunikasi API dienkripsi melalui HTTPS (Nginx sebagai Reverse Proxy).
@@ -48,7 +48,7 @@ Berbagai skrip dikembangkan untuk mengotomatiskan tugas-tugas kritis:
 
 ---
 
-## 📲 Distribusi APK & OTA (Over-The-Air)
+## Distribusi APK & OTA (Over-The-Air)
 Sistem pembaruan aplikasi mobile dilakukan tanpa melalui Play Store:
 1. APK di-build secara lokal.
 2. Skrip `deploy_latest.py` mengunggah APK ke folder publik web server (`/var/www/html/`).

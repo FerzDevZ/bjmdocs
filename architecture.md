@@ -1,8 +1,8 @@
-# 🏗️ Arsitektur & Alur Data (System Architecture)
+# Arsitektur & Alur Data (System Architecture)
 
 Sistem Berlimdo mengadopsi arsitektur **Distributed Client-Server** yang dirancang untuk skalabilitas dan keandalan di lingkungan dengan konektivitas yang bervariasi.
 
-## 📡 Topologi Ekosistem
+## Topologi Ekosistem
 
 Sistem ini terbagi menjadi tiga lapisan utama yang saling berinteraksi secara asinkron dan sinkron:
 
@@ -22,7 +22,7 @@ Sistem ini terbagi menjadi tiga lapisan utama yang saling berinteraksi secara as
 
 ---
 
-## 🔄 Alur Data Transaksional (Transaction Flow)
+## Alur Data Transaksional (Transaction Flow)
 
 ### Skenario: Kunjungan & Penjualan (Restock)
 1. **Inisiasi (Mobile)**: Salesman memilih toko. Aplikasi mengambil koordinat GPS terkini.
@@ -37,12 +37,12 @@ Sistem ini terbagi menjadi tiga lapisan utama yang saling berinteraksi secara as
 
 ---
 
-## 🔐 Keamanan & Integritas Data
+## Keamanan & Integritas Data
 - **JWT (JSON Web Token)**: Digunakan untuk setiap permintaan API setelah login sukses.
 - **Device Binding**: Backend mencatat `deviceId` pada login pertama untuk mencegah satu akun digunakan di banyak perangkat tanpa izin.
-- **Fraud Detection Logic**: Setiap kunjungan diverifikasi ulang di sisi server untuk memastikan koordinat tidak dimanipulasi oleh aplikasi *Fake GPS*.
+- **Fraud Detection Logic**: Setiap kunjungan diverifikasi ulang di sisi server untuk memastikan koordinat tidak dimanipulasi oleh aplikasi Fake GPS.
 
 ---
 
-## 📈 Skalabilitas
+## Skalabilitas
 Sistem dirancang untuk dapat dipisahkan menjadi microservices di masa depan jika beban kerja meningkat, terutama modul `Analytics` yang berat dan `Transaction` yang intensif.

@@ -1,14 +1,14 @@
-# 🔌 Spesifikasi API (RESTful API Documentation)
+# Spesifikasi API (RESTful API Documentation)
 
 Backend Berlimdo menyediakan API berbasis REST yang menggunakan JSON sebagai format pertukaran data. Semua permintaan ke endpoint yang dilindungi harus menyertakan `Authorization: Bearer <JWT_TOKEN>`.
 
-## 📍 Base URL
+## Base URL
 - **Production**: `https://api.berlimdo.com/api/v1`
 - **Development**: `http://76.13.22.232:3000/api/v1`
 
 ---
 
-## 🔑 1. Modul Autentikasi (`/auth`)
+## 1. Modul Autentikasi (`/auth`)
 
 ### POST `/login`
 Melakukan autentikasi pengguna dan mengikat perangkat (Device Binding).
@@ -31,7 +31,7 @@ Melakukan autentikasi pengguna dan mengikat perangkat (Device Binding).
 
 ---
 
-## 🏪 2. Modul Toko & Kunjungan (`/shops`, `/visits`)
+## 2. Modul Toko & Kunjungan (`/shops`, `/visits`)
 
 ### GET `/shops`
 Mengambil daftar toko terdekat atau berdasarkan wilayah.
@@ -52,7 +52,7 @@ Membuka sesi kunjungan dengan validasi geo-fencing.
 
 ---
 
-## 📦 3. Modul Restock & Inventaris (`/restock`, `/inventory`)
+## 3. Modul Restock & Inventaris (`/restock`, `/inventory`)
 
 ### POST `/restock`
 Mencatat transaksi penjualan dan memperbarui stok.
@@ -76,7 +76,7 @@ Mengambil data stok yang saat ini dibawa oleh salesman (Seller Inventory).
 
 ---
 
-## 📊 4. Modul Dashboard & Laporan (`/dashboard`, `/reports`)
+## 4. Modul Dashboard & Laporan (`/dashboard`, `/reports`)
 
 ### GET `/dashboard/analytics`
 Mengambil agregasi data penjualan untuk grafik dashboard (Hanya Admin).
@@ -86,12 +86,12 @@ Menghasilkan file Excel untuk laporan harian/bulanan.
 
 ---
 
-## 🌍 5. Modul Geodata (`/geodata`)
+## 5. Modul Geodata (`/geodata`)
 Digunakan untuk sinkronisasi data master wilayah (Provinsi -> Kabupaten -> Kecamatan -> Desa).
 
 ---
 
-## ⚠️ Penanganan Error (Standardized Error Response)
+## Penanganan Error (Standardized Error Response)
 Semua error mengikuti format berikut:
 ```json
 {
@@ -101,4 +101,4 @@ Semua error mengikuti format berikut:
   "details": {} 
 }
 ```
-*Kode Error Umum: `UNAUTHORIZED`, `FORBIDDEN_LOCATION`, `INSUFFICIENT_STOCK`, `DEVICE_MISMATCH`.*
+Kode Error Umum: `UNAUTHORIZED`, `FORBIDDEN_LOCATION`, `INSUFFICIENT_STOCK`, `DEVICE_MISMATCH`.

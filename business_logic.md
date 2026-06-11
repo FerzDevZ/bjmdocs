@@ -1,8 +1,8 @@
-# 🧠 Logika Bisnis, Anti-Fraud & Gamifikasi
+# Logika Bisnis, Anti-Fraud & Gamifikasi
 
 Dokumen ini merinci algoritma dan aturan bisnis yang menjadi kecerdasan di balik sistem Berlimdo.
 
-## 📍 1. Algoritma Validasi Lokasi (Geo-fencing)
+## 1. Algoritma Validasi Lokasi (Geo-fencing)
 
 Sistem menggunakan **Formula Haversine** untuk menghitung jarak lingkaran besar antara dua titik di permukaan bumi berdasarkan koordinat GPS.
 
@@ -16,24 +16,24 @@ Sistem menggunakan **Formula Haversine** untuk menghitung jarak lingkaran besar 
       throw new Error("OUT_OF_RANGE");
   }
   ```
-- **Optimasi N+1 Query**: Menggunakan teknik *Bulk Fetch* untuk produk dan inventaris sebelum perulangan, yang secara signifikan mengurangi beban database.
+- **Optimasi N+1 Query**: Menggunakan teknik Bulk Fetch untuk produk dan inventaris sebelum perulangan, yang secara signifikan mengurangi beban database.
 - **Integritas Transaksional**: Penggunaan `prisma.$transaction` memastikan atomisitas data; jika satu langkah gagal (misal: stok tidak cukup), seluruh transaksi dibatalkan.
-- **Pemisahan Logika Reward**: Modul XP dan Achievement berjalan di blok *asinkron* terpisah agar tidak menghambat proses utama penjualan.
+- **Pemisahan Logika Reward**: Modul XP dan Achievement berjalan di blok asinkron terpisah agar tidak menghambat proses utama penjualan.
 
 ---
 
-## 🚫 2. Strategi Anti-Fraud (Pencegahan Kecurangan)
+## 2. Strategi Anti-Fraud (Pencegahan Kecurangan)
 
 Berlimdo menerapkan sistem pertahanan berlapis terhadap manipulasi data:
 
-1. **Hardware Check (Mobile)**: Aplikasi mendeteksi penggunaan *Mock Location Provider* dan *Developer Options* di Android.
+1. **Hardware Check (Mobile)**: Aplikasi mendeteksi penggunaan Mock Location Provider dan Developer Options di Android.
 2. **Device Fingerprinting**: Penguncian `deviceId` memastikan salesman tidak bisa berbagi akun atau login dari perangkat yang telah dimodifikasi (root).
 3. **Photo Metadata Audit**: Foto bukti kunjungan diverifikasi timestamp-nya agar tidak menggunakan foto lama dari galeri (Direct Camera Only).
 4. **Time-Window Validation**: Transaksi hanya diizinkan pada jam operasional yang telah ditentukan (Server-Time based).
 
 ---
 
-## 🎮 3. Sistem Gamifikasi (XP & Leveling)
+## 3. Sistem Gamifikasi (XP & Leveling)
 
 Untuk meningkatkan produktivitas, sistem menerapkan elemen RPG:
 
@@ -46,7 +46,7 @@ Untuk meningkatkan produktivitas, sistem menerapkan elemen RPG:
 
 ---
 
-## 📦 4. Aturan Manajemen Inventaris (Stock Rules)
+## 4. Aturan Manajemen Inventaris (Stock Rules)
 
 Sistem melacak tiga jenis stok secara simultan:
 
@@ -59,7 +59,7 @@ Sistem melacak tiga jenis stok secara simultan:
 
 ---
 
-## 💰 5. Struktur Harga Dinamis
+## 5. Struktur Harga Dinamis
 Harga produk otomatis berubah berdasarkan `ShopType`:
 - **RETAIL**: Harga eceran tertinggi.
 - **GROSIR**: Harga partai besar dengan diskon volume.

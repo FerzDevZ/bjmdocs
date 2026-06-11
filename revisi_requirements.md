@@ -1,10 +1,10 @@
-# 📋 Revisi Fitur & Bug Report (PT BMJ)
+# Revisi Fitur & Bug Report (PT BMJ)
 
 Dokumen ini mencatat seluruh kebutuhan revisi dan perbaikan bug yang diminta oleh client (Pak Wahyu/FerzPedia) pada tanggal 11 Juni 2026.
 
 ---
 
-## ⚠️ PENTING: NOT AWALAN
+## PENTING: NOT AWALAN
 **JANGAN MENGHAPUS SEMUA DATA TOKO DI DATABASE** sampai fitur baru selesai diperbaiki.
 
 ---

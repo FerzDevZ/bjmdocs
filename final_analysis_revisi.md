@@ -1,4 +1,4 @@
-# 📊 Analisis Final & Dampak Teknis Revisi PT BMJ
+# Analisis Final & Dampak Teknis Revisi PT BMJ
 
 Dokumen ini menyajikan analisis mendalam terhadap seluruh permintaan revisi client, korelasi dengan bug yang sudah ditemukan, dampak teknis, serta roadmap implementasi prioritas.
 
@@ -10,9 +10,9 @@ Berikut adalah bug yang **sudah diketahui dari audit** dan **dikonfirmasi langsu
 
 | Bug dari Client | Lokasi di Vulnerability Report | Status & Dampak |
 |-----------------|---------------------------------|-----------------|
-| Print dari Histori beda harga total (yg benar) vs print langsung | **Mobile App: Potensi Data Loss** / Logika History Print | **KRITIS**: Menunjukkan adanya inkonsistensi perhitungan harga Grosir/Retail pada saat menyimpan vs mengambil data history. |
-| Stok berubah sendiri tanpa di-input | **Backend: Race Condition / Transaksi Tidak Lengkap** | **KRITIS**: Sesuai temuan `Race Condition` pada `oosCount` dan logika stok yang belum sepenuhnya atomic. |
-| Harga di nota toko Grosir jadi Retail tanpa potongan | **Backend/Print Service: Logika Klasifikasi Toko** | **KRITIS**: Kesalahan validasi `shopType` saat generate nota. |
+| Print dari Histori beda harga total (yg benar) vs print langsung | Mobile App: Potensi Data Loss / Logika History Print | KRITIS: Menunjukkan adanya inkonsistensi perhitungan harga Grosir/Retail pada saat menyimpan vs mengambil data history. |
+| Stok berubah sendiri tanpa di-input | Backend: Race Condition / Transaksi Tidak Lengkap | KRITIS: Sesuai temuan `Race Condition` pada `oosCount` dan logika stok yang belum sepenuhnya atomic. |
+| Harga di nota toko Grosir jadi Retail tanpa potongan | Backend/Print Service: Logika Klasifikasi Toko | KRITIS: Kesalahan validasi `shopType` saat generate nota. |
 
 ---
 
